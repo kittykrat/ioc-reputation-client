@@ -1,4 +1,5 @@
-#### Input: IP address
+#### Input: 
+  - IP address
 #### Process:
   - Query reputation APIs
   - Parse Response

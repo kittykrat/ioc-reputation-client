@@ -8,7 +8,11 @@ import sys
 # Imports the sys module so we can access command-line arguments (sys.argv)
 # Imported so we do not have to ask the user for the IP in our script, we can take it directly on the command line.
 
-API_KEY = "INSERT_YOUR_API_KEY_HERE"
+import os
+import argparse
+import json
+
+API_KEY = "YOUR_API_KEY"
 # This stores the Virustotal API key.
 # This key authenticates you to the Virustotal API.
 
@@ -68,7 +72,17 @@ if __name__ == "__main__":
         # Call our function and pass the IP address
 
         if result:
-            print(result)
+             #print(json.dumps(result, indent=2))
+             print("Keys:", result.keys())
+             print("Keys inside 'data':", result['data'].keys())
+             ip_address = result.get('data', {}).get('id', 'Not found')
+             ip_type = result.get('data', {}).get('type', 'Not found')
+             ip_links = result.get('data', {}).get('links', 'Not found')
+             ip_attribute = result.get('data', {}).get('attributes', 'Not found')
+             print(ip_address)
+             print(ip_type)
+             print(ip_links)
+             print(ip_attribute)
         # Print the raw JSON response
         # TO DO: FORMAT THIS NICELY
     else:

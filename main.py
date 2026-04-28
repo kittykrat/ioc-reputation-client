@@ -12,7 +12,7 @@ import os
 import argparse
 import json
 
-API_KEY = "25dea4856ce2faa87ff674576d6a6b74f1a5d7dd06e58d5e6aa0d4ab5d752e24"
+API_KEY = "[YOUR API KEY HERE]"
 # This stores the Virustotal API key.
 # This key authenticates you to the Virustotal API.
 
